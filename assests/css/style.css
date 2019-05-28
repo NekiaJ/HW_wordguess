@@ -1,0 +1,42 @@
+body{
+    background-color: rgb(1, 10, 19);
+    padding: 20px;
+    
+}
+
+.wrapper{
+    margin: 10px 10px 10px 10px;
+   
+}
+
+.container{
+    background-image: url(bground_img.jpg);
+    background-position: right bottom, left top;
+    background-repeat: no-repeat, repeat;
+    
+    
+}
+h1{
+    font-family: 'UnifrakturMaguntia', cursive;
+    font-size: 55px;
+    color:#ccc;
+}
+ #questDiv{
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+    font-size: 25px;
+    color:#bdc3c7;
+}
+
+img{
+    width: 280px;
+    height: 250px;
+    padding: 10px;
+}
+
+#winsDiv,#psycGuess,#userGuess,#lossDiv{
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    color: #4aa9af;
+font-kerning: auto;
+}

@@ -1,1 +1,107 @@
+<!DOCTYPE html>
+<html lang="en-us">
 
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel= "stylesheet" href="assests/css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:500|UnifrakturMaguntia&display=swap" rel="stylesheet">  
+  <title>Psychic Game</title>
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <div class="container">
+      
+      <div class="row">
+          <div class="col-4">
+            <h1>The Psychic Game </h1>
+          </div>
+          <div class="col-3" id="gameIMG">
+            <img src="assests/images/crystal_ball.jpg" alt="crystal ball image" >
+          </div>
+          <div class="col-4" >
+              <p id="questDiv"> Can you guess what letter I'm thinking of?</p>
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="col-4" >
+            <p id="winsDiv"></p>
+          </div>
+          <div class="col-3" >
+            <p id="psycGuess"></p>
+            
+          </div>
+          <div class="col-3" >
+            <p id="userGuess"></p>
+          </div>
+          <div class="col-3" >
+            <p id="lossDiv"></p>
+          </div>
+          <div class="col">
+            <p id="guessLeft"></p>
+          </div>
+
+      <script type="text/javascript">
+
+          var letterChoices =["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+          
+          var wins = 0;
+          var losses = 0;
+          var guessAllowed= 5;
+          var noMore_Guess = "You have no more guess avaliable"
+
+          var userGuess_text = document.getElementById("userGuess");
+          var psycGuess_text = document.getElementById("psycGuess");
+          var win_text = document.getElementById("winsDiv");
+          var loss_text = document.getElementById("lossDiv");
+          var guessLeft_text=document.getElementById("guessLeft");
+
+          document.onkeyup = function(event) { 
+
+            var userGuess = event.key;
+
+            var psycGuess = letterChoices[Math.floor(Math.random() * letterChoices.length)];
+            //var pyscGuess = Math.floor(Math.random() * 1000) + 1;
+
+          if (userGuess == psycGuess){
+            wins++;
+            
+          }
+          else{
+            losses++;
+            
+          }
+           questDiv.textContent = "";
+           
+           userGuess_text.textContent = "Your Guess:"+ '' + userGuess;
+            psycGuess_text.textContent = "Psychic Guess:"+''  + psycGuess;
+            win_text.textContent = "Wins:" +''+ wins;
+            loss_text.textContent = "Losses:" +'' + losses; 
+        
+            for(var g=0;g<guessAllowed;i++){
+            if(userGuess>= guessAllowed){
+              guessLeft_text.textContent = "Only" + ''+guessLeft_text + "left";
+            }
+            else{
+              return(noMore_Guess);
+            }
+          }
+
+        
+          };
+
+
+
+
+          
+          
+          
+          </script>
+        </div>
+      </div>
+   </div>
+</body>
