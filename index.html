@@ -10,10 +10,11 @@
 </head>
 
 <body>
-
+    
   <div class="wrapper">
     <div class="container">
-      
+       
+      <!-- grid layout for game-->
       <div class="row">
           <div class="col-4">
             <h1>The Psychic Game </h1>
@@ -44,64 +45,13 @@
           <div class="col">
             <p id="guessLeft"></p>
           </div>
-
-      <script type="text/javascript">
-
-          var letterChoices =["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-          
-          var wins = 0;
-          var losses = 0;
-          var guessAllowed= 5;
-          var noMore_Guess = "You have no more guess avaliable"
-
-          var userGuess_text = document.getElementById("userGuess");
-          var psycGuess_text = document.getElementById("psycGuess");
-          var win_text = document.getElementById("winsDiv");
-          var loss_text = document.getElementById("lossDiv");
-          var guessLeft_text=document.getElementById("guessLeft");
-
-          document.onkeyup = function(event) { 
-
-            var userGuess = event.key;
-
-            var psycGuess = letterChoices[Math.floor(Math.random() * letterChoices.length)];
-            //var pyscGuess = Math.floor(Math.random() * 1000) + 1;
-
-          if (userGuess == psycGuess){
-            wins++;
-            
-          }
-          else{
-            losses++;
-            
-          }
-           questDiv.textContent = "";
-           
-           userGuess_text.textContent = "Your Guess:"+ '' + userGuess;
-            psycGuess_text.textContent = "Psychic Guess:"+''  + psycGuess;
-            win_text.textContent = "Wins:" +''+ wins;
-            loss_text.textContent = "Losses:" +'' + losses; 
-        
-            for(var g=0;g<guessAllowed;i++){
-            if(userGuess>= guessAllowed){
-              guessLeft_text.textContent = "Only" + ''+guessLeft_text + "left";
-            }
-            else{
-              return(noMore_Guess);
-            }
-          }
-
-        
-          };
-
-
-
-
-          
-          
-          
-          </script>
         </div>
+
+       
+        <script src="/assests/javascript/game.js">
+          // Javascript file link to html page
+        
+          </script>
       </div>
    </div>
 </body>
